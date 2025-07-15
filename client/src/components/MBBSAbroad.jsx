@@ -28,7 +28,7 @@ export default function MBBSAbroad() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-4xl font-extrabold text-white mb-4"
         >
-          🎓 MBBS Abroad – 2026 Intake Now Open
+          🎓 MBBS Abroad – 2026 <span className="text-yellow-400">Intake Now Open</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}

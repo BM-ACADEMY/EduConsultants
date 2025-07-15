@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import {
   Instagram,
-  Twitter,
   Facebook,
   Youtube,
   MapPin,
@@ -54,14 +53,7 @@ const Footer = () => {
                   />
                 </a>
               </li>
-              <li>
-                <a href="https://x.com/BMACADEMYPONDY" target="_blank">
-                  <Twitter
-                    size={20}
-                    className="text-white hover:text-yellow-400 transition"
-                  />
-                </a>
-              </li>
+              
               <li>
                 <a
                   href="https://www.facebook.com/people/BM-Academy/61566753898165/"
@@ -167,7 +159,7 @@ const Footer = () => {
                   className="text-white group-hover:text-yellow-400 transition"
                 />
                 <a
-                  href="https://www.abmgroups.org/educonsultants"
+                  href="https://abmgroups.org/"
                   target="_blank"
                   className="group-hover:text-yellow-400 transition"
                 >

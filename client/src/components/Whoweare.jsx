@@ -41,7 +41,7 @@ const WhoWeAre = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-extrabold text-center text-gray-300 mb-10"
         >
-          Who We Are
+          Who We <span className="text-yellow-400">Are</span>
         </motion.h2>
         <motion.p
           className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed"

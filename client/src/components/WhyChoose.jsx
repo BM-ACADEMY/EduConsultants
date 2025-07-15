@@ -36,7 +36,7 @@ export default function WhyAbroad() {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-extrabold text-center text-gray-300 mb-10"
         >
-          🌍 Why Choose Abroad?
+          🌍 Why Choose <span className="text-yellow-400">Abroad?</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-10">
@@ -47,10 +47,15 @@ export default function WhyAbroad() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-blue-100"
           >
-            <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center gap-2">
-              <CheckCircle className="text-green-500 w-6 h-6" />
+            <motion.h3
+              className="text-xl font-semibold text-blue-900 mb-4 flex items-center gap-2"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <ClipboardPen className=" w-6 h-6" />
               Key Benefits:
-            </h3>
+            </motion.h3>
             <ul className="space-y-4 text-gray-800 text-base">
               {benefits.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
@@ -74,7 +79,10 @@ export default function WhyAbroad() {
             </h3>
             <ul className="list-disc pl-5 space-y-3 text-gray-800">
               {universities.map((uni, i) => (
-                <li key={i}>{uni}</li>
+                // <li key={i}>{uni}</li>
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle className="text-green-600 w-5 h-5 mt-1"/>{uni}
+                </li>
               ))}
             </ul>
           </motion.div>

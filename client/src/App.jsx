@@ -9,6 +9,7 @@ import Reviews from './components/Review'
 import EduConsultants from './components/EduConsultants'
 import Footer from './components/Footer'
 import EnquiryModal from './components/EnquiryForm'
+import WhatsappFloatButton from './components/Whatsapp'
 
 const App = () => {
   return (
@@ -19,9 +20,10 @@ const App = () => {
       <MBBSAbroad/>
       <WhyAbroad/>
       <CollegeAdmissionSupport/>
-      <Reviews/>
       <EduConsultants/>
+      <Reviews/>
       <EnquiryModal/>
+      <WhatsappFloatButton/>
       <Footer/>
     </div>
   )

@@ -14,7 +14,7 @@ export default function EduConsultants() {
   ];
 
   return (
-    <section className="w-full px-4 py-16 bg-gradient-to-t from-black to-[#000000e1]">
+    <section className="w-full px-4 py-16 bg-gradient-to-b from-black to-[#000000e1]">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -22,7 +22,7 @@ export default function EduConsultants() {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-extrabold text-center text-gray-300 mb-10"
         >
-           Why Choose EduConsultants?
+           Why Choose <span className="text-yellow-400">EduConsultants?</span>
         </motion.h2>
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">

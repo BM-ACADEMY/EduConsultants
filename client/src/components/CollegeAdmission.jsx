@@ -39,7 +39,7 @@ export default function CollegeAdmissionSupport() {
             className="text-3xl md:text-4xl font-extrabold flex justify-center items-center gap-3 text-white"
           >
             <GraduationCap className="w-8 h-8 text-indigo-400" />
-            College Admission Support – Pan India
+            College Admission Support – <span className="text-yellow-400">Pan India</span>
           </motion.h2>
           <motion.p
             custom={1}

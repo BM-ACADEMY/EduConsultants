@@ -214,7 +214,7 @@ export default function Home() {
           variants={textItem}
           className="text-slate-300 md:text-base mt-3 max-w-md"
         >
-          Helping You Join the Right College – In India or Abroad
+          Helping You Join the Right College – <span className="text-yellow-400"> In India or Abroad</span>
         </motion.p>
 
         <motion.p

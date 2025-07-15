@@ -114,20 +114,19 @@ const Reviews = () => {
 
   return (
     <section
-      className="py-16 bg-gradient-to-b from-black to-[#000000e1]"
+      className="py-16 bg-gradient-to-t from-black to-[#000000e1]"
       id="review"
     >
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ y: -20 }}
-          animate={{ y: 0 }}
-          className="text-center mb-16 px-4 md:px-8"
-        >
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
-            Our
-            <span className="text-[#facc15] not-italic"> Clients</span>
-          </h1>
-        </motion.div>
+      
+         <motion.h2
+                  initial={{ opacity: 0, y: -20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-3xl md:text-4xl font-extrabold text-center text-gray-300 mb-10"
+                >
+                   Our <span className="text-yellow-400"> Clients</span>
+                </motion.h2>
 
         <style>{`
                     @keyframes marqueeScroll {
