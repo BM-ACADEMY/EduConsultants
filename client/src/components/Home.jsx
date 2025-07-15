@@ -11,11 +11,13 @@ import {
   Globe,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import EnquiryModal from "./EnquiryForm";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeNavbar = () => setMenuOpen(false);
   const openNavbar = () => setMenuOpen(true);
+  const [showModal, setShowModal] = useState(false);
 
   // Animation variants
   const textContainer = {
@@ -54,9 +56,9 @@ export default function Home() {
   };
 
   return (
-    <section className="relative flex flex-col items-center bg-black text-white text-sm pb-16 pt-16 min-h-[90vh] bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/bg-gradient-4.svg')] bg-center bg-cover font-poppins overflow-hidden">
+    <section className="relative flex flex-col items-center bg-black  text-sm pb-16 pt-16 min-h-[90vh] bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/bg-gradient-4.svg')] bg-center bg-cover font-poppins overflow-hidden">
       {/* Floating Animated Icons */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+      <div className="absolute text-white inset-0 pointer-events-none z-0">
         <motion.div
           className="absolute top-[10%] left-[5%] opacity-40"
           animate={{ x: [0, 20, 0], y: [0, -10, 0], rotate: [0, 5, -5, 0] }}
@@ -112,7 +114,7 @@ export default function Home() {
         variants={navVariants}
         initial="hidden"
         animate="show"
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 border-b border-white/25 bg-black/70 backdrop-blur md:px-16 lg:px-24 xl:px-32 w-full"
+        className="fixed top-0 text-white left-0 right-0 z-50 flex items-center justify-between p-4 border-b border-white/25 bg-black/70 backdrop-blur md:px-16 lg:px-24 xl:px-32 w-full"
       >
         <a href="#" className="flex items-center gap-2">
           <span className="text-2xl font-bold text-white tracking-tight">
@@ -125,16 +127,16 @@ export default function Home() {
 
         <ul className="hidden md:flex gap-8 font-medium">
           <li className="hover:text-slate-300">
-            <a href="#">Products</a>
+            <a href="#home">Home</a>
           </li>
           <li className="hover:text-slate-300">
-            <a href="#">Customer Stories</a>
+            <a href="#about">About</a>
           </li>
           <li className="hover:text-slate-300">
-            <a href="#">Pricing</a>
+            <a href="#admission">Admission</a>
           </li>
           <li className="hover:text-slate-300">
-            <a href="#">Docs</a>
+            <a href="#review">Review</a>
           </li>
         </ul>
 
@@ -171,23 +173,23 @@ export default function Home() {
         </div>
         <ul className="flex flex-col items-start gap-6 px-6 py-4 text-lg font-medium">
           <li onClick={closeNavbar}>
-            <a href="#" className="hover:text-slate-300">
-              Products
+            <a href="#home" className="hover:text-slate-300">
+              Home
             </a>
           </li>
           <li onClick={closeNavbar}>
-            <a href="#" className="hover:text-slate-300">
-              Customer Stories
+            <a href="#about" className="hover:text-slate-300">
+              About
             </a>
           </li>
           <li onClick={closeNavbar}>
-            <a href="#" className="hover:text-slate-300">
-              Pricing
+            <a href="#admission" className="hover:text-slate-300">
+              Admission
             </a>
           </li>
           <li onClick={closeNavbar}>
-            <a href="#" className="hover:text-slate-300">
-              Docs
+            <a href="#review" className="hover:text-slate-300">
+              Review
             </a>
           </li>
         </ul>
@@ -227,15 +229,26 @@ export default function Home() {
           variants={textItem}
           className="flex items-center gap-3 mt-8 text-sm"
         >
-          <button className="flex items-center gap-2 px-6 py-3 bg-white text-black hover:bg-gray-200 transition rounded-full font-semibold">
+          <button
+            onClick={() => {
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="flex items-center gap-2 px-6 py-3 bg-white text-black hover:bg-gray-200 transition rounded-full font-semibold"
+          >
             <span>Get Started</span>
             <ArrowRight className="w-4 h-4" />
           </button>
-          <button className="bg-white/10 border border-white/15 rounded-full px-6 py-3 text-white hover:bg-white/20 transition">
+          <button
+            onClick={() => setShowModal(true)}
+            className="bg-white/10 border border-white/15 rounded-full px-6 py-3 text-white hover:bg-white/20 transition"
+          >
             Learn More
           </button>
         </motion.div>
       </motion.div>
+      <EnquiryModal showModal={showModal} setShowModal={setShowModal} />
     </section>
   );
 }

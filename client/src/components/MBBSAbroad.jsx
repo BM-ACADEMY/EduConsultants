@@ -1,7 +1,8 @@
 // MBBSAbroad.jsx
-import React from "react";
+import React, { useState } from "react";
 import { PlaneTakeoff, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import EnquiryModal from "./EnquiryForm";
 
 const destinations = [
   {
@@ -14,7 +15,10 @@ const destinations = [
   },
 ];
 
+
+
 export default function MBBSAbroad() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section className="relative w-full px-6 py-16 bg-gradient-to-t from-black to-[#000000e1]  overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
@@ -55,7 +59,7 @@ export default function MBBSAbroad() {
                 <p className="text-sm text-white/90 mb-4">
                   Recognized Worldwide • Affordable Tuition
                 </p>
-                <button className="inline-flex items-center gap-2 bg-white text-gray-900 text-sm font-medium px-4 py-2 rounded-full hover:bg-gray-200 transition">
+                <button onClick={() => setShowModal(true)} className="inline-flex items-center gap-2 bg-white text-gray-900 text-sm font-medium px-4 py-2 rounded-full hover:bg-gray-200 transition">
                   Apply Now <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -63,6 +67,8 @@ export default function MBBSAbroad() {
           ))}
         </div>
       </div>
+            <EnquiryModal showModal={showModal} setShowModal={setShowModal} />
+
     </section>
   );
 }

@@ -30,16 +30,16 @@ const WhoWeAre = () => {
   return (
     <section
       className="relative bg-gradient-to-b from-black to-[#000000e1] py-20 px-6 md:px-12 lg:px-24"
-      id="who-we-are"
+      id="about"
     >
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10 mix-blend-overlay"></div>
 
       <div className="relative max-w-7xl mx-auto text-center">
         <motion.h2
-          className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-extrabold text-center text-gray-300 mb-10"
         >
           Who We Are
         </motion.h2>
@@ -62,7 +62,11 @@ const WhoWeAre = () => {
               className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-red-100"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 + index * 0.2 }}
+              transition={{
+                duration: 0.7,
+                ease: "easeOut",
+                delay: 0.4 + index * 0.2,
+              }}
             >
               <div className="absolute inset-0 bg-red-500 opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300"></div>
               <div className="relative flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">

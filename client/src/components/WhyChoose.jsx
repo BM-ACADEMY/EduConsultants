@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CheckCircle,
   Calendar,
@@ -7,6 +7,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import EnquiryModal from "./EnquiryForm"; // Make sure path is correct
 
 const benefits = [
   "NMC/MCI Approved Universities",
@@ -24,6 +25,8 @@ const universities = [
 ];
 
 export default function WhyAbroad() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className="w-full px-6 py-16 bg-gradient-to-b from-black to-[#000000e1]">
       <div className="max-w-6xl mx-auto">
@@ -37,7 +40,7 @@ export default function WhyAbroad() {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Benefits Checklist */}
+          {/* Benefits */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -58,7 +61,7 @@ export default function WhyAbroad() {
             </ul>
           </motion.div>
 
-          {/* Partner Universities */}
+          {/* Universities */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -77,7 +80,7 @@ export default function WhyAbroad() {
           </motion.div>
         </div>
 
-        {/* CTA */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +95,10 @@ export default function WhyAbroad() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow-md hover:bg-blue-700 transition">
+            <button
+              onClick={() => setShowModal(true)}
+              className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow-md hover:bg-blue-700 transition"
+            >
               <ClipboardPen className="w-5 h-5" />
               Start Your Application
             </button>
@@ -103,6 +109,9 @@ export default function WhyAbroad() {
           </div>
         </motion.div>
       </div>
+
+      {/* Modal Render */}
+      <EnquiryModal showModal={showModal} setShowModal={setShowModal} />
     </section>
   );
 }
